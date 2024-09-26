@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendations</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Warna latar belakang putih */
+        }
+        .card {
+            margin-bottom: 20px;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+            text-align: center; /* Center the text */
+            background-color: white; /* Warna latar belakang default kartu */
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            background-color: #007BFF; /* Biru saat hover */
+            color: white; /* Ubah warna teks menjadi putih saat hover */
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column; /* Align items vertically */
+            justify-content: center; /* Center vertically */
+            height: 150px; /* Set fixed height */
+        }
+        .cosine-similarity {
+            display: none; /* Tampilkan hanya saat di hover */
+        }
+        .card:hover .cosine-similarity {
+            display: block; /* Tampilkan cosine similarity saat di hover */
+        }
+        .card-title {
+            margin: 0; /* Hapus margin default */
+        }
+        h2 {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #28a745; /* Hijau untuk tombol */
+            border-color: #28a745; /* Border tombol hijau */
+        }
+        .btn-primary:hover {
+            background-color: #218838; /* Warna lebih gelap untuk hover tombol */
+            border-color: #1e7e34; /* Border lebih gelap saat hover */
+        }
+        .btn-danger {
+            background-color: #dc3545; /* Merah untuk tombol */
+            border-color: #dc3545; /* Border tombol merah */
+        }
+        .btn-danger:hover {
+            background-color: #c82333; /* Warna lebih gelap untuk hover tombol merah */
+            border-color: #bd2130; /* Border lebih gelap saat hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Movie Recommendation System</h1>
+        <form method="post" class="mb-4">
+            <div class="form-group">
+                <label for="user_id">Enter User ID:</label>
+                <input type="number" id="user_id" name="user_id" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Get Recommendations</button>
+        </form>
+
+        {% if recommendations %}
+        <h2>Recommendations for User ID: {{ user_id }}</h2>
+        <div class="row">
+            {% for recommendation in recommendations %}
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recommendation['original_title'] }}</h5>
+                        <p class="cosine-similarity">Cosine Similarity: {{ recommendation['cosine'] }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="text-center">No recommendations found.</p>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
