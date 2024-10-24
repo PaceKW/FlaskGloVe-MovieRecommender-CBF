@@ -1,4 +1,4 @@
-# Movie Recommendation System with Flask, GloVe using Content Based Filtering
+# Movie Recommendation System with Flask, GloVe using Collaborative Based Filtering
 
 
 ## Example/GIF Demonstration
