@@ -1,4 +1,4 @@
-# Movie Recommendation System with Flask, GloVe using Collaborative Based Filtering
+# Movie Recommendation System with Flask, GloVe using Collaborative-Based Filtering
 
 
 ## Example/GIF Demonstration
@@ -9,7 +9,7 @@ This project is a **Movie Recommendation System** developed using **Flask** and 
 
 ## Features
 - Utilizes **GloVe** for embedding movie descriptions.
-- Implements a **Content-Based Filtering** algorithm to generate recommendations.
+- Implements a **Collaborative-Based Filtering** algorithm to generate recommendations.
 - User-friendly interface built with **Bootstrap** for responsiveness and elegance.
 
 ## Technologies Used
