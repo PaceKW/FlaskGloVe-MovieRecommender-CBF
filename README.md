@@ -5,7 +5,7 @@
 ![Demo GIF](images/Demo.gif)
 
 ## Description
-This project is a **Movie Recommendation System** developed using **Flask** and **GloVe** embeddings, employing **Content-Based Filtering** techniques. The application recommends movies based on user preferences by analyzing the content of the movies.
+This project is a **Movie Recommendation System** developed using **Flask** and **GloVe** embeddings, employing **Collaborative-Based Filtering** techniques. The application recommends movies based on user preferences by analyzing the content of the movies.
 
 ## Features
 - Utilizes **GloVe** for embedding movie descriptions.
